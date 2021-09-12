@@ -52,11 +52,21 @@ export default Provider;
 
 ```
 // example.js
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "./store";
 
 const Example = () => {
   const { state, dispatch } = useContext(Context);
+
+  useEffect(() => {
+      const mockData = [{
+          uuid: "7f757336-4c9b-4004-b497-5bf6b754dfab",
+          title: "Hello world",
+          description: "Hello world",
+          ...
+      }]
+    dispatch({ type: "GET_ALL_NEWS", payload: mockData });
+  }, [])
   return (
       <div> {state.news.count} </div>
     )
@@ -66,7 +76,7 @@ const Example = () => {
 
 The core api are createContext, useReducer, useContext, 
 - createContext allow us to pass properties around
-- useReducer allows us to manage our state and also provides us a way to update our state.
+- useReducer allows us to manage our state and also provides us a way to update our state using `dispatch`
 - useContext allows us to access the pass properies from the created context
 
 Note: Wrap the top most parent with `Provider` from `store.js`

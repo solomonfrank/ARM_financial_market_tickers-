@@ -1,6 +1,8 @@
 import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 import "react-dropdown/style.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useParams } from "react-router";
 import {
@@ -89,7 +91,7 @@ const Detail = () => {
       <Header />
       <div className="main">
         <div className="main_container">
-          <div className="container__left">
+          <div className="container__detail_left">
             {isLoading ? (
               <div>
                 <img src={Loader} alt="fetch loader" />
@@ -110,11 +112,14 @@ const Detail = () => {
                     </time>
                   </p>
                 </div>
-                <img
-                  src={state.singleNews?.image_url ?? ""}
-                  alt="new logo"
+                <LazyLoadImage
                   className="news__imageurl"
+                  alt="new logo"
+                  effect="blur"
+                  src={state.singleNews?.image_url ?? ""}
+                  placeholderSrc="https://picsum.photos/640/360"
                 />
+
                 <div className="new__content_box">
                   {state.singleNews?.description ?? ""}
                 </div>
@@ -148,7 +153,7 @@ const Detail = () => {
               </div>
             )}
           </div>
-          <div className="container__right">
+          <div className="container__detail_right">
             <h5 className="latest__header">Related News</h5>
             {renderRelatedNew()}
           </div>

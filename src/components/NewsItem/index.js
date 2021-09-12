@@ -1,6 +1,8 @@
 import moment from "moment";
 import React from "react";
 import { FiClock } from "react-icons/fi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { useHistory } from "react-router";
 import "./index.scss";
 
@@ -12,11 +14,18 @@ const NewsItem = ({ news }) => {
       onClick={() => history.push(`/news/${news.uuid}`)}
     >
       <div className="news__imgBox">
-        <img
+        <LazyLoadImage
+          className="news__list_item_img"
+          alt={"imgggff"}
+          effect="blur"
           src={news.image_url}
+          placeholderSrc="https://picsum.photos/640/360"
+        />
+        {/* <img
+
           alt="news list"
           className="news__list_item_img"
-        />
+        /> */}
         {/* <span className="news__tag">ICT</span> */}
       </div>
 

@@ -73,7 +73,7 @@ const Header = ({ toggleLogin }) => {
     handleChange({ title: phrase }, "search");
   };
   return (
-    <nav className={style.header__nav}>
+    <nav className={`${style.header__nav} header__nav`}>
       <div className={style.header__nav__left}>
         <Link to="/" className={style.header__nav_link}>
           Logo

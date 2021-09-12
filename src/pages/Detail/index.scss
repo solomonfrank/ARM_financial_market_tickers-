@@ -12,6 +12,12 @@
 .content__wrapper {
   text-align: left;
 }
+.container__detail_left {
+  flex: 0 0 63%;
+}
+.container__detail_right {
+  flex: 0 0 35%;
+}
 .news__imageurl {
   width: 100%;
 }

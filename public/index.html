@@ -31,17 +31,27 @@
         align-items: center;
         justify-content: center;
       }
+      .header__nav {
+        align-items: center;
+        display: flex;
+        font-size: 2rem;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        position: relative;
+        box-shadow: var(--box-shadow);
+        background-color: #005594;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        justify-content: space-between;
+      }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div class="loader-container">
-      <img
-        src="../src/assets/imgs/Loader.gif"
-        class="loader-spin"
-        alt="loader"
-      />
+      <img src="./Loader.gif" class="loader-spin" alt="loader" />
     </div>
     <!--
       This HTML file is a template.

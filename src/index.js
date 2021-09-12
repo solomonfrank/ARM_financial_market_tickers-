@@ -1,20 +1,33 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Spinner from "./assets/imgs/Loader.gif";
 import "./index.css";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 
 const Loader = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <img src={Spinner} alt="fetch loader" />
     </div>
   );
 };
 
 ReactDOM.render(
-  <Suspense fallback={<Loader />}>
+  <Suspense
+    fallback={
+      <div>
+        <Loader />
+      </div>
+    }
+  >
     <React.StrictMode>
       <App />
     </React.StrictMode>

@@ -144,7 +144,7 @@ const Landing = () => {
           </div>
           <div className="container__right">
             <div className="container__news">
-              <h5 className="latest__header">Latest News</h5>
+              <h5 className="latest__header">Related News</h5>
               {renderRelatedNew()}
             </div>
           </div>

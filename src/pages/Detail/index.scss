@@ -1,0 +1,36 @@
+.main {
+  position: relative;
+  padding: 3rem;
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+  }
+}
+
+.content__wrapper {
+  text-align: left;
+}
+.news__imageurl {
+  width: 100%;
+}
+.new__content_box {
+  width: 100%;
+  line-height: 1.9;
+  margin-top: 2rem;
+}
+.detail__title {
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+.time_publish {
+  color: #747474;
+}
+
+.social-share {
+  margin-top: 3rem;
+}
+.social-share-item {
+  margin-right: 1rem;
+}

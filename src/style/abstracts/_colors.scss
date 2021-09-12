@@ -1,0 +1,20 @@
+/*=============================================
+=            Global text color            =
+=============================================*/
+
+$body-text-color: var(--body-text-color, $gray-600) !default;
+$body-bg-color: var(--body-bg-color, $white) !default;
+
+/*=============================================
+=            Button color            =
+=============================================*/
+
+$btn-primary-color: var(--btn-primay-color, $white) !default;
+$btn-primary-bg: var(--btn-primary-bg, $red-200) !default;
+
+/*=============================================
+=            Form color            =
+=============================================*/
+
+$input-border-color: var(--input-border-color, $gray-200) !default;
+$input-placeholder-color: var(--input-placeholder-color, $gray-400) !default;

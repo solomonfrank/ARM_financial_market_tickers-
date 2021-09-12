@@ -14,9 +14,9 @@ I would add
 
 The latest version of react is v17, and there has not been more new features added others than bug fixes. Set of new features where introduced in v16 which are hooks api. This demo app is built on top react hooks, and some of hooks api that I used are
 
+```
 // store.js
-`import React, { createContext, useReducer, useContext } from "react";`
-
+import React, { createContext, useReducer, useContext } from "react";
 export const initState = {
   news: [],
 }
@@ -34,7 +34,7 @@ const newsReducer = (state = initState, action) => {
     }
 
 }
-`export const Context = createContext(initState);`
+export const Context = createContext(initState);
 
 const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(newsReducer, initState);
@@ -47,9 +47,12 @@ const Provider = ({ children }) => {
 
 export default Provider;
 
+```
+
+```
 // example.js
-`import React, { useContext } from "react";`
-`import { Context } from "./store";`
+import React, { useContext } from "react";
+import { Context } from "./store";
 
 const Example = () => {
   const { state, dispatch } = useContext(Context);
@@ -57,6 +60,9 @@ const Example = () => {
       <div> {state.news.count} </div>
     )
 }
+```
+
+
 The core api are createContext, useReducer, useContext, 
 - createContext allow us to pass properties around
 - useReducer allows us to manage our state and also provides us a way to update our state.

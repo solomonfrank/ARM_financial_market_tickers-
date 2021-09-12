@@ -1,14 +1,24 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 
+const Loader = () => {
+  return (
+    <div>
+      <img src={Spinner} alt="fetch loader" />
+    </div>
+  );
+};
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Suspense fallback={<Loader />}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Suspense>,
   document.getElementById("root")
 );
 
